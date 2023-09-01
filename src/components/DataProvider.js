@@ -4,7 +4,7 @@ import DataContext from "./DataContext";
 
 const DataProvider=(props)=>{
 
-    const [data, setData] = useState('')
+    const [data, setData] = useState([])
 
     
 
