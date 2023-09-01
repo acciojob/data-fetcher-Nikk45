@@ -1,12 +1,11 @@
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import './../styles/App.css';
-import DataContext from "./DataContext";
 
 const App = () => {
 
 
-  const {data, setData} = useContext(DataContext);
+  const [data, setData] = useState([])
   const [error,setError] = useState('')
   if(data.length === 0){
 
