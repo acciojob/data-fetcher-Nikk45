@@ -25,6 +25,7 @@ const App = () => {
       <div>
         {/* Do not remove the main div */}
         {
+
           data.length===0 ? <p>Loading...</p> : error ? <p>{error}</p> : 
           data.length === 0 ? <p>An error occured: No data Found</p> :<div>
           <h1>Data Fetched from API</h1>
