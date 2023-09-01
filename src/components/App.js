@@ -13,7 +13,7 @@ const App = () => {
     fetch("https://dummyjson.com/products")
     .then((res)=>res.json())
     .then((res)=>setData(res))
-    .catch(err=>setError(err))
+    .catch((error)=>setError(error.message))
   }
 
   
@@ -25,7 +25,7 @@ const App = () => {
       <div>
         {/* Do not remove the main div */}
         {
-          data.length===0 ? <p>Loading...</p> :<div>
+          data.length===0 ? <p>Loading...</p> : error ? <p>{error}</p> : <div>
           <h1>Data Fetched from API</h1>
           <pre>
           {
@@ -34,9 +34,17 @@ const App = () => {
           </pre>
         </div>
         }
-        {
-          error && <p>{error}</p>
-        }
+
+        {/* {
+           error ? <p>{error}</p> : <div>
+           <h1>Data Fetched from API</h1>
+           <pre>
+           {
+             JSON.stringify(data,null,2)
+           }
+           </pre>
+         </div>
+        } */}
 
       </div>
   
